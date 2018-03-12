@@ -14,6 +14,10 @@ module.exports = function(app){
 	app.route('/api/articles/edit/:articleId')
 	.get(articles.read)
 	.put(users.requiresLogin, articles.update);
+	
+	
+app.route('/articles/all').get(articles.listView);  // show all article 
+app.route('/article/:articleId').get(articles.singleView);  // single article
 
 
 app.param('articleId', articles.articleByID);
