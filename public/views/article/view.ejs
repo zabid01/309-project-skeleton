@@ -6,13 +6,13 @@
       
       <h1>Single Article</h1>
       <hr>
-      <!--<h2>re</h2>-->
-     <h1> <%= request.article.title%> </h1>
-          <h2> <%= request.article.id%> </h2>
-          <h2> <%= request.article.content%> </h2>
-               <h2> <%= request.article.created%> </h2>
-      
-      
+    
+ 
+       <!--<% console.log(request.article.user) %>-->
+     <h1> TITLE:  <%= request.article.title%> </h1>
+          <h3> ID: <%= request.article.id%> </h3>
+          <h3> CONTENT: <%= request.article.content%> </h3>
+               <h3> TIME CREATED: <%= request.article.created%> </h3>
 
   </body>  
 </html>
