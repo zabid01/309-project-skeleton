@@ -17,6 +17,7 @@ module.exports = function(app){
 	
 	
 app.route('/articles/all').get(articles.listView);  // show all article 
+app.route('/articles/new').get(articles.createView);  // create and view only  
 app.route('/article/:articleId').get(articles.singleView);  // single article
 app.route('/article/:articleId/content').get(articles.showContent);  // show content of a single article
 

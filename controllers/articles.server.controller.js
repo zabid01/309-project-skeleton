@@ -13,7 +13,7 @@ module.exports.list = function(req, res) {
     } else {
       console.log("api called"); 
 
-      res.status(200).send(data);  //meaning 
+      res.status(200).send(data);  
     }
   });
 };
@@ -73,6 +73,13 @@ module.exports.singleView = function(req, res) {
 module.exports.showContent = function(req, res) {
      
     res.render('./../public/views/article/showContent.ejs', {
+		user: req.user || null, 
+		request: req
+	});
+};
+module.exports.createView = function(req, res) {
+     
+    res.render('./../public/views/article/new.ejs', {
 		user: req.user || null, 
 		request: req
 	});
