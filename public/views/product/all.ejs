@@ -1,0 +1,20 @@
+<html>
+ <head>
+     <title>All Products</title>
+ </head>   
+  <body>
+      
+      <h1>List of All products</h1>
+            <hr>
+<% console.log(products) %>
+  <% for(var i=0; i<products.length; i++) { %>
+    <h1> <%= products[i].name %> </h1>
+    <p> ID: <%= products[i].id%> </p>
+     <p> Price: <%= products[i].price%> </p>
+     <p> Quantity: <%= products[i].quantity%> </p>
+    <h3><%= products[i].description%></h3>
+    <h3><%= products[i].created%></h3>
+          <hr>
+    <% } %>
+  </body>  
+</html>
