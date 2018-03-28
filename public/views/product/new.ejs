@@ -13,8 +13,10 @@
       <p>Quantity:</p>
       <input type="number" id="quantity"></input> <br/>
       <p>Description:</p>
-      <input type="text" id="description"></input> <br/>
+      <textarea type="text" id="description"></textarea> <br/>
       <button id="submit">Submit</button> <br/>
+      <div id='error'></div>
+      <div id='success'></div>
       <script src="/lib/jquery/dist/jquery.min.js"></script>
       <script>
       var newProduct = {name:"", price:"", quantity:"", description:""};
@@ -30,8 +32,11 @@
                url: "/api/products",
                data: newProduct
            }).done(function(response){
+              $('#success').text("Product Added!");
                console.log(response);
+               window.location.replace('/product/'+response._id);
            }).fail(function(response){
+              $('#error').text(JSON.parse(response.responseText).message);
                console.log(response.responseText);
            });
               
